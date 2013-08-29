@@ -61,7 +61,7 @@ public class SimpleStudentPDFView extends AbstractPdfView {
      */
     private void addBand(PdfContentByte content, Color color) {
         content.roundRectangle(80, 700, 250, 7, 2.5f);
-        content.setColorStroke(Color.RED);
+        content.setColorFill(Color.RED);
         content.fill();
     }
 
@@ -72,6 +72,7 @@ public class SimpleStudentPDFView extends AbstractPdfView {
      */
     private void addBigRectangle(PdfContentByte content) {
         content.rectangle(80, 700, 250, -168);
+        content.setColorStroke(Color.BLACK);
         content.closePathStroke();
     }
 
@@ -127,14 +128,18 @@ public class SimpleStudentPDFView extends AbstractPdfView {
 
             y += 12;
         }
+        content.setColorStroke(Color.BLACK);
         // left side
         content.moveTo(90, 635);
         content.lineTo(90, 539);
         content.closePathStroke();
+        
+        
 
         // right side
         content.moveTo(180, 635);
         content.lineTo(180, 539);
+        content.setColorStroke(Color.BLACK);
         content.closePathStroke();
     }
 
@@ -222,6 +227,7 @@ public class SimpleStudentPDFView extends AbstractPdfView {
         Barcode39 barcode = new Barcode39();
         barcode.setCode(id.toString());
 
+        content.setColorFill(Color.BLACK);
         Image barcodeImage = barcode.createImageWithBarcode(content, null, null);
         try {
             content.addImage(barcodeImage, 100, 0, 0, 35, 220, 536);
