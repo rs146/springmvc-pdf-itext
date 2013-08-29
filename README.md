@@ -6,5 +6,5 @@ An older version of iText is used because:
 2. The newer versions of iText are released under a different license (not free for commercial applications).
 3. If the latest iText version is really needed, your own AbstractView could be written instead of using the default.
 
-However, in comparison to the original repo, this Project actaully works. The important bugs in the previous repo have been fixed
+However, in comparison to the original repo, this Project actually works. The important bugs in the previous repo have been fixed
 and a more complex PDF is also produced by this code.
