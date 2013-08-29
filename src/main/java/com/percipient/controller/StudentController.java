@@ -12,30 +12,29 @@ import com.percipient.bean.Student;
 @RequestMapping("/students")
 public class StudentController {
 
-	@Autowired
-	private Student student;
+    @Autowired
+    private Student student;
 
-	@RequestMapping(value = "/html", produces = "application/xml")
-	public String html(Model model) {
-		student.setName("Corey Brown");
-		model.addAttribute("stud", student);
-		return "studentPage";
-	}
-	
-	@RequestMapping("/beanToPdfSimple")
-	public ModelAndView beanToPdfSimple() {
-		ModelAndView m = new ModelAndView("simpleStudPdfView");
-		student.setName("Braxton Miller");
-		m.getModelMap().addAttribute("stud", student);
-		return m;
-	}
+    @RequestMapping(value = "/html", produces = "application/xml")
+    public String html(Model model) {
+        student.setName("Corey Brown");
+        model.addAttribute("stud", student);
+        return "studentPage";
+    }
 
-	@RequestMapping("/beanToPdfRich")
-	public ModelAndView beanToPdf() {
-		ModelAndView m = new ModelAndView("richStudPdfView");
-		student.setName("Braxton Miller");
-		m.getModelMap().addAttribute("stud", student);
-		return m;
-	}
+    @RequestMapping("/beanToPdfSimple")
+    public ModelAndView beanToPdfSimple() {
+        ModelAndView m = new ModelAndView("simpleStudPdfView");
+        student.setName("Braxton Miller");
+        m.getModelMap().addAttribute("stud", student);
+        return m;
+    }
 
+    @RequestMapping("/beanToPdfRich")
+    public ModelAndView beanToPdf() {
+        ModelAndView m = new ModelAndView("richStudPdfView");
+        student.setName("Braxton Miller");
+        m.getModelMap().addAttribute("stud", student);
+        return m;
+    }
 }
